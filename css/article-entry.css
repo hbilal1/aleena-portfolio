@@ -1,0 +1,6 @@
+/* Portfolio article entry points, matching the existing visual language */
+.navlinks .nav-articles-link{color:var(--accent);font-weight:800;white-space:nowrap;transition:color .2s ease,text-shadow .2s ease,transform .2s ease}
+.navlinks .nav-articles-link:hover{transform:translateY(-2px);color:var(--ink);text-shadow:0 0 18px var(--accent)}
+.hero-buttons a[href="articles.html"]{white-space:nowrap}
+@media(max-width:790px){.navlinks .nav-articles-link{display:inline-flex}}
+@media(prefers-reduced-motion:reduce){.navlinks .nav-articles-link{transition:none}}
