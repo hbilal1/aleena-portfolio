@@ -12,11 +12,11 @@ function cors(origin,env){return origin===env.SITE_ORIGIN?{'Access-Control-Allow
 const cats=['Movie Journal','Filmmaking','Video Editing','Motion Graphics'];
 async function github(env,method,body){const owner=encodeURIComponent(env.GITHUB_OWNER),repo=encodeURIComponent(env.GITHUB_REPO),branch=encodeURIComponent(env.GITHUB_BRANCH||'main');const url=`https://api.github.com/repos/${owner}/${repo}/contents/data/articles.json${method==='GET'?'?ref='+branch:''}`;const r=await fetch(url,{method,headers:{Authorization:'Bearer '+env.GITHUB_TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'Aleena-Khan-Article-Publisher','Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const j=await r.json().catch(()=>({}));if(!r.ok)throw Error(`GitHub API ${r.status}: ${j.message||'request failed'}`);return j}
 function decodeContent(content){const raw=atob(content.replace(/\s/g,''));return new TextDecoder().decode(Uint8Array.from(raw,c=>c.charCodeAt(0)))}
-function encodeContent(str){return b64url(enc.encode(str)).replace(/-/g,'+').replace(/_/g,'/').replace(/=+$/,'')}
+function encodeContent(str){const bytes=enc.encode(str);let raw='';for(let i=0;i<bytes.length;i+=8192)raw+=String.fromCharCode(...bytes.subarray(i,i+8192));return btoa(raw)}
 async function readArticles(env){const response=await github(env,'GET');const data=JSON.parse(decodeContent(response.content));if(!Array.isArray(data))throw Error('articles.json must be an array');return {articles:data,sha:response.sha}}
 export default {async fetch(req,env){const origin=req.headers.get('Origin')||'';const headers=cors(origin,env);const url=new URL(req.url),path=url.pathname;const isAllowed=origin===env.SITE_ORIGIN;
 if(req.method==='OPTIONS')return new Response(null,{status:isAllowed?204:403,headers});
-if(!['/articles','/login','/publish','/health'].includes(path))return json({error:'Not found'},404,headers);
+if(!['/articles','/login','/publish','/edit','/delete','/health'].includes(path))return json({error:'Not found'},404,headers);
 if(path==='/health')return json({ok:true,configured:Boolean(env.GITHUB_OWNER&&env.GITHUB_REPO&&env.SITE_ORIGIN)},200,headers);
 // All browser requests must come from exactly the configured website origin.
 if(!isAllowed)return json({error:'Website origin is not authorized. Check SITE_ORIGIN.'},403,headers);
@@ -30,6 +30,23 @@ const title=String(data.title||'').trim(),body=String(data.body||'').trim(),cate
 const {articles,sha}=await readArticles(env);const article={id:crypto.randomUUID(),title,body,category,status:'published',publishedAt:new Date().toISOString()};articles.unshift(article);
 await github(env,'PUT',{message:`Publish article: ${title.slice(0,80)}`,content:encodeContent(JSON.stringify(articles,null,2)+'\n'),sha,branch:env.GITHUB_BRANCH||'main'});
 return json({ok:true,article},201,headers)}
+
+if((path==='/edit'||path==='/delete')&&req.method==='POST'){
+ const bearer=(req.headers.get('Authorization')||'').replace(/^Bearer\s+/i,'');
+ if(!bearer||!(await validToken(bearer,env.SESSION_SECRET)))return json({error:'Admin login required. Please sign in again.'},401,headers);
+ const data=await req.json();const id=String(data.id||'').trim();
+ if(!id)return json({error:'Article ID is required'},400,headers);
+ const {articles,sha}=await readArticles(env);const index=articles.findIndex(a=>a.id===id);
+ if(index<0)return json({error:'Article not found'},404,headers);
+ const old=articles[index];let updated=null;
+ if(path==='/edit'){
+  const title=String(data.title||'').trim(),body=String(data.body||'').trim(),category=String(data.category||'').trim();
+  if(title.length<3||title.length>150||body.length>15000||body.split(/\s+/u).filter(Boolean).length<20||!cats.includes(category))return json({error:'Title 3–150 characters, body 20–15,000 words/characters limit, and valid category required.'},400,headers);
+  updated={...old,title,body,category,updatedAt:new Date().toISOString()};articles[index]=updated;
+ }else{articles.splice(index,1)}
+ await github(env,'PUT',{message:(path==='/edit'?'Edit article: ':'Delete article: ')+old.title.slice(0,70),content:encodeContent(JSON.stringify(articles,null,2)+'\n'),sha,branch:env.GITHUB_BRANCH||'main'});
+ return json(path==='/edit'?{ok:true,article:updated}:{ok:true,deletedId:id},200,headers)
+}
 return json({error:'Method not allowed'},405,headers)
 }catch(e){return json({error:String(e.message||e)},e.message?.startsWith('GitHub API 409')?409:502,headers)}
 }};
