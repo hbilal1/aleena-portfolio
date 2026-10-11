@@ -1,13 +1,5 @@
 [
   {
-    "id": "9a157c5d-bf62-402c-bae6-b492f49e980a",
-    "title": "greet11",
-    "body": "ZIP extract karke updated website files GitHub par upload karein.\n\n\n\ndata/articles.json overwrite na karein, kyunki usmein live published articles hain.\n\n\n\nCloudflare mein updated cloudflare-worker/src/index.js paste karke Deploy karein.\n\n\n\nWebsite par Ctrl + F5 press karein aur Edit/Delete test karein.",
-    "category": "Filmmaking",
-    "status": "published",
-    "publishedAt": "2026-10-11T17:46:24.502Z"
-  },
-  {
     "id": "4e7af6c8-435d-4dd5-a02e-740e6eb9de9a",
     "title": "Testing",
     "body": "Ab article ka title, category, publishing date aur complete paragraph display hona chahiye.\nImportant: Screenshot se GitHub par file update hona confirm hota hai, lekin live article reader ka fix abhi test karna hai.",
