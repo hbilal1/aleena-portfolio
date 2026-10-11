@@ -5,3 +5,204 @@
 @keyframes akBadgeBreathe{50%{transform:translateY(-3px);box-shadow:0 6px 23px #7049d69c}}@media(prefers-reduced-motion:reduce){.ak-fresh-sticker,.ak-nav-new{animation:none}}
 .ak-manage-toolbar{margin:20px 0;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:18px 22px;border:1px solid #8c9eb636;border-radius:20px;background:#fff0;flex-wrap:wrap}.ak-manage-toolbar strong,.ak-manage-toolbar small{display:block}.ak-manage-toolbar small{opacity:.68;margin-top:5px;font-size:12px}.ak-manage-login,.ak-edit-btn,.ak-delete-btn,.ak-confirm{cursor:pointer;border:1px solid #5483aa66;border-radius:14px;padding:10px 16px;font-weight:750;background:transparent;color:inherit}.ak-manage-login.unlocked{background:#2a977b1b;border-color:#30997f}.ak-article-admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}.ak-edit-btn{color:#2680bd}.ak-delete-btn{color:#db5064;border-color:#e96e8a77}.ak-edit-btn:hover,.ak-manage-login:hover{background:#678ec019}.ak-delete-btn:hover{background:#d7536718}
 .ak-manage-overlay[hidden]{display:none!important}.ak-manage-overlay{position:fixed;inset:0;z-index:99999;background:#08172ca8;display:grid;place-items:center;padding:20px;backdrop-filter:blur(9px)}.ak-manage-dialog{width:min(560px,100%);max-height:90vh;overflow:auto;position:relative;padding:clamp(22px,4vw,40px);background:#fbfcff;color:#182b4b;border-radius:28px;box-shadow:0 28px 90px #040c224d}.ak-manage-dialog h2{font-size:clamp(24px,4vw,34px);margin:13px 0}.ak-manage-dialog p{color:#687a96;line-height:1.65}.ak-manage-kicker{font-size:11px;font-weight:850;letter-spacing:.17em;color:#1678b7}.ak-manage-close{position:absolute;right:22px;top:18px;border:0;background:#e9eff6;color:#243653;border-radius:12px;width:37px;height:37px;font-size:25px;cursor:pointer}.ak-field{display:block;font-weight:720;font-size:13px;margin-top:14px}.ak-field input,.ak-field select,.ak-field textarea{font:inherit;display:block;margin-top:7px;width:100%;box-sizing:border-box;border:1px solid #cbd8e8;border-radius:13px;padding:13px;background:#fff;color:#1d304f;outline-color:#277bc4}.ak-field textarea{resize:vertical}.ak-manage-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:18px}.ak-cancel{background:#fff;border:1px solid #c9d6e5;padding:10px 18px;border-radius:12px;cursor:pointer}.ak-confirm{background:linear-gradient(110deg,#176ba7,#8252cf);color:white;border:0}.ak-confirm:disabled{opacity:.6}#akManageStatus{color:#db465b;font-size:13px}.ak-developer-footer{text-align:center;padding:24px 16px 30px;color:inherit;opacity:.78;font:600 12px/1.5 'DM Sans',system-ui,sans-serif;letter-spacing:.05em}.ak-developer-footer span{display:inline-flex;gap:8px;align-items:center;border:1px solid currentColor;border-radius:999px;padding:10px 18px;opacity:.8}.ak-developer-footer strong{font-weight:850;background:linear-gradient(115deg,#208ac7,#8a54cb);background-clip:text;-webkit-background-clip:text;color:transparent}.ak-developer-footer svg{width:16px;height:16px;stroke:#4d83d4;fill:none;stroke-width:1.7}
+
+
+/* Developer signature upgrade */
+.ak-developer-footer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px 16px 42px;
+  margin-top:10px;
+  text-align:center;
+  color:#dde8ff;
+  opacity:1;
+  font:600 12px/1.5 'DM Sans',system-ui,sans-serif;
+  letter-spacing:.05em;
+}
+.ak-developer-footer span{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px 24px;
+  min-width:min(100%,420px);
+  border-radius:999px;
+  border:1px solid rgba(125,154,203,.5);
+  background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(245,249,255,.42));
+  color:#6f7e97;
+  box-shadow:0 10px 35px rgba(11,28,56,.08), inset 0 1px 0 rgba(255,255,255,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  animation:akDevFloat 3.8s ease-in-out infinite;
+}
+.ak-developer-footer span::before{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-35%;
+  width:42%;
+  height:340%;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.8),transparent);
+  transform:rotate(24deg);
+  opacity:.7;
+  animation:akDevShine 5s ease-in-out infinite;
+}
+.ak-developer-footer span::after{
+  content:"";
+  position:absolute;
+  inset:auto;
+  width:190px;
+  height:72px;
+  border-radius:999px;
+  background:radial-gradient(circle,rgba(91,149,255,.24) 0%,rgba(118,93,255,.18) 42%,rgba(118,93,255,0) 72%);
+  z-index:-1;
+  filter:blur(18px);
+  animation:akDevGlow 4.4s ease-in-out infinite;
+}
+.ak-developer-footer strong{
+  font-weight:900;
+  letter-spacing:.02em;
+  background:linear-gradient(90deg,#2d89d9 0%,#5e84ff 45%,#9f63e3 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 18px rgba(124,104,255,.22);
+}
+.ak-developer-footer svg{
+  width:18px;
+  height:18px;
+  flex:0 0 auto;
+  stroke:#4a8cdf;
+  fill:none;
+  stroke-width:1.9;
+  filter:drop-shadow(0 0 10px rgba(96,141,255,.35));
+  animation:akDevPulse 2.6s ease-in-out infinite;
+}
+.ak-developer-footer span:hover{
+  transform:translateY(-3px) scale(1.01);
+  border-color:rgba(110,148,220,.72);
+  box-shadow:0 18px 42px rgba(13,33,66,.14), inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(132,111,237,.08);
+}
+@keyframes akDevFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
+}
+@keyframes akDevPulse{
+  0%,100%{transform:scale(1);opacity:.95}
+  50%{transform:scale(1.08);opacity:1}
+}
+@keyframes akDevGlow{
+  0%,100%{transform:scale(1);opacity:.68}
+  50%{transform:scale(1.08);opacity:1}
+}
+@keyframes akDevShine{
+  0%{left:-40%;opacity:0}
+  10%{opacity:.65}
+  45%{left:115%;opacity:0}
+  100%{left:115%;opacity:0}
+}
+@media (max-width:640px){
+  .ak-developer-footer{
+    padding:24px 14px 34px;
+  }
+  .ak-developer-footer span{
+    width:100%;
+    min-width:0;
+    padding:13px 18px;
+    gap:10px;
+    font-size:11px;
+  }
+  .ak-developer-footer svg{
+    width:16px;
+    height:16px;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .ak-developer-footer span,
+  .ak-developer-footer span::before,
+  .ak-developer-footer span::after,
+  .ak-developer-footer svg{
+    animation:none!important;
+  }
+}
+
+/* Signature Footer V2 — Aurora Prism */
+@property --ak-signature-angle { syntax:"<angle>"; inherits:false; initial-value:0deg; }
+.ak-developer-footer {
+  display:flex; justify-content:center; align-items:center;
+  padding:36px 16px 48px; margin:0; opacity:1;
+  color:#e9f4ff; isolation:isolate;
+}
+.ak-developer-footer > span {
+  --ak-signature-angle:0deg;
+  position:relative; isolation:isolate; overflow:visible;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:max-content; max-width:calc(100vw - 36px); min-width:0;
+  gap:10px; border:2px solid transparent; border-radius:999px;
+  padding:14px 27px;
+  font:700 13px/1.4 'DM Sans',system-ui,sans-serif;
+  letter-spacing:.045em; white-space:normal;
+  color:#d7e4fc;
+  background:
+    linear-gradient(115deg,#111d3b 0%,#172755 48%,#221946 100%) padding-box,
+    conic-gradient(from var(--ak-signature-angle),#61eafc,#6387ff,#c26aff,#ff8bd6,#60e7fa) border-box;
+  box-shadow:0 9px 30px rgba(33,52,123,.27),0 0 22px rgba(97,166,255,.22),inset 0 1px 1px rgba(255,255,255,.18);
+  opacity:1;
+  backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px);
+  animation:akSignatureBorder 7s linear infinite,akSignatureFloat 4s ease-in-out infinite;
+  transition:box-shadow .35s ease,filter .35s ease,transform .35s ease;
+  will-change:auto;
+}
+.ak-developer-footer > span::before {
+  content:""; position:absolute; z-index:-1; inset:-10px;
+  border-radius:inherit;
+  background:conic-gradient(from var(--ak-signature-angle),rgba(51,222,249,.32),rgba(104,102,255,.38),rgba(209,94,255,.3),rgba(51,222,249,.32));
+  filter:blur(16px); opacity:.72; pointer-events:none;
+  animation:akSignatureBorder 7s linear infinite,akSignatureAura 3.8s ease-in-out infinite;
+}
+.ak-developer-footer > span::after {
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  left:4%; top:2px; right:4%; height:55%; border-radius:999px;
+  background:linear-gradient(180deg,rgba(255,255,255,.11),transparent);
+  opacity:.9; transform:none; animation:none;
+}
+.ak-developer-footer > span > * {position:relative; z-index:1;}
+.ak-developer-footer strong {
+  font-size:1.09em; font-weight:900; letter-spacing:.035em;
+  color:transparent;
+  background:linear-gradient(92deg,#7ceeff 0%,#a3b8ff 26%,#e3a5ff 54%,#ffb6dc 76%,#7ceeff 100%);
+  background-size:250% 100%; background-clip:text;-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 9px rgba(153,133,255,.37));
+  animation:akSignatureText 5.5s ease-in-out infinite;
+}
+.ak-developer-footer svg {
+  width:19px; height:19px; flex:0 0 19px;
+  stroke:#8ef2ff;stroke-width:2;fill:none;
+  filter:drop-shadow(0 0 8px rgba(94,226,255,.9));
+  animation:akSignatureIcon 3s ease-in-out infinite;
+}
+.ak-developer-footer > span:hover {
+  filter:brightness(1.1);
+  box-shadow:0 13px 35px rgba(55,71,169,.36),0 0 34px rgba(126,95,255,.45),0 0 50px rgba(79,208,248,.16),inset 0 1px 1px rgba(255,255,255,.25);
+  transform:translateY(-4px);
+}
+@keyframes akSignatureBorder {to {--ak-signature-angle:360deg;}}
+@keyframes akSignatureFloat {0%,100% {translate:0 0;} 50% {translate:0 -3px;}}
+@keyframes akSignatureAura {0%,100% {opacity:.52;} 50% {opacity:.98;}}
+@keyframes akSignatureText {0%,100% {background-position:0% 50%;} 50% {background-position:100% 50%;}}
+@keyframes akSignatureIcon {0%,100% {filter:drop-shadow(0 0 4px rgba(94,226,255,.5));} 50% {filter:drop-shadow(0 0 11px rgba(94,226,255,1));}}
+@media(max-width:640px) {
+  .ak-developer-footer {padding:27px 12px 36px;}
+  .ak-developer-footer > span {width:auto; max-width:100%; padding:12px 19px; font-size:11px; gap:8px;}
+  .ak-developer-footer svg {width:17px;height:17px;flex-basis:17px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .ak-developer-footer > span,.ak-developer-footer > span::before,.ak-developer-footer > span::after,
+  .ak-developer-footer svg,.ak-developer-footer strong {animation:none!important;transition:none!important;translate:none!important;}
+}

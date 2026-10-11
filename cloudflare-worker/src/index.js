@@ -32,9 +32,11 @@ await github(env,'PUT',{message:`Publish article: ${title.slice(0,80)}`,content:
 return json({ok:true,article},201,headers)}
 
 if((path==='/edit'||path==='/delete')&&req.method==='POST'){
- const bearer=(req.headers.get('Authorization')||'').replace(/^Bearer\s+/i,'');
- if(!bearer||!(await validToken(bearer,env.SESSION_SECRET)))return json({error:'Admin login required. Please sign in again.'},401,headers);
- const data=await req.json();const id=String(data.id||'').trim();
+ const data=await req.json();
+ // Every edit and delete must prove knowledge of the admin password.
+ // An old login/session token never authorizes a modification.
+ if(typeof data.password!=='string'||!(await same(data.password,env.ADMIN_PASSWORD)))return json({error:'Incorrect admin password'},401,headers);
+ const id=String(data.id||'').trim();
  if(!id)return json({error:'Article ID is required'},400,headers);
  const {articles,sha}=await readArticles(env);const index=articles.findIndex(a=>a.id===id);
  if(index<0)return json({error:'Article not found'},404,headers);
