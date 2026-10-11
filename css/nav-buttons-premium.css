@@ -1,0 +1,21 @@
+/* Refined, theme-aware navigation pills — does not change application behavior. */
+.bar .bar-actions{gap:10px!important;align-items:center}
+.bar .bar-actions .chip,.bar .bar-actions .btn.primary,.bar .journal-theme-picker{height:43px!important;min-height:43px!important;display:inline-flex!important;align-items:center;justify-content:center;position:relative;isolation:isolate;overflow:hidden;border-radius:15px!important;white-space:nowrap;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s!important}
+.bar .bar-actions .chip{padding:0 16px!important;gap:9px!important;background:linear-gradient(155deg,color-mix(in srgb,var(--card-bg) 94%,white 6%),color-mix(in srgb,var(--field-bg) 92%,var(--surface)))!important;border:1px solid color-mix(in srgb,var(--stroke) 76%,var(--bright) 24%)!important;box-shadow:0 7px 17px rgba(8,25,50,.05),inset 0 1px 0 rgba(255,255,255,.13)!important;font-size:11px!important;letter-spacing:.035em;font-weight:800}
+.bar .bar-actions .chip.active{border-color:color-mix(in srgb,var(--bright) 48%,var(--stroke))!important;background:linear-gradient(130deg,color-mix(in srgb,var(--bright) 12%,var(--card-bg)),color-mix(in srgb,var(--pink) 9%,var(--card-bg)))!important;box-shadow:0 8px 24px color-mix(in srgb,var(--bright) 12%,transparent),inset 0 1px 0 rgba(255,255,255,.15)!important}
+.bar .bar-actions .chip:hover,.bar .journal-theme-picker:hover{transform:translateY(-3px)!important;border-color:var(--bright)!important;box-shadow:0 12px 28px color-mix(in srgb,var(--bright) 21%,transparent)!important}
+.bar .bar-actions .nav-icon{display:grid;place-items:center;width:18px!important;height:18px!important}
+.bar .bar-actions .nav-icon svg{height:18px!important;width:18px!important;stroke-width:1.9;transition:transform .32s cubic-bezier(.2,.8,.2,1),filter .32s}
+.bar .bar-actions .chip:hover .nav-icon svg{transform:translateX(-2px) scale(1.12);filter:drop-shadow(0 0 5px var(--bright))}
+.bar .bar-actions .chip.active .nav-icon svg{animation:navIconBreathe 3.3s ease-in-out infinite}
+.bar .journal-theme-picker{max-width:145px!important;padding:0 12px!important;gap:7px!important;border:1px solid color-mix(in srgb,var(--stroke) 70%,var(--bright) 30%)!important;background:linear-gradient(135deg,color-mix(in srgb,var(--bright) 10%,var(--card-bg)),color-mix(in srgb,var(--pink) 7%,var(--card-bg)))!important;box-shadow:0 9px 23px color-mix(in srgb,var(--bright) 9%,transparent)!important}
+.bar .journal-theme-picker select{height:40px!important;min-height:40px!important;max-width:105px!important;font-size:11px!important;font-weight:800!important;padding:0 2px!important;cursor:pointer}
+.bar .journal-theme-picker .picker-icon,.bar .journal-theme-picker .picker-icon svg{width:17px!important;height:17px!important;flex:none}
+.bar .journal-theme-picker .picker-icon svg{animation:navIconBreathe 3.5s ease-in-out infinite}
+.bar .bar-actions .btn.primary{padding:0 19px!important;gap:9px!important;box-shadow:0 11px 25px color-mix(in srgb,var(--bright) 22%,transparent)!important;border-radius:15px!important}
+.bar .bar-actions .btn.primary:hover{transform:translateY(-3px)!important;box-shadow:0 15px 30px color-mix(in srgb,var(--bright) 29%,transparent)!important}
+.bar .bar-actions .btn.primary:hover .nav-icon svg{transform:translate(2px,-2px) rotate(-8deg) scale(1.12)}
+@keyframes navIconBreathe{0%,100%{transform:scale(1);filter:none}50%{transform:scale(1.12);filter:drop-shadow(0 0 7px var(--bright))}}
+@media(max-width:980px){.bar .bar-actions{gap:6px!important}.bar .bar-actions .chip{padding:0 12px!important}.bar .bar-actions .btn.primary{padding:0 13px!important}.bar .journal-theme-picker{max-width:129px!important}}
+@media(max-width:700px){.bar .bar-actions{gap:8px!important}.bar .bar-actions .chip,.bar .bar-actions .btn.primary{min-width:0;width:100%!important}.bar .journal-theme-picker{max-width:none!important;width:100%!important;justify-content:space-between!important}.bar .journal-theme-picker select{max-width:none!important;width:auto!important}}
+@media(prefers-reduced-motion:reduce){.bar .journal-theme-picker .picker-icon svg,.bar .bar-actions .chip.active .nav-icon svg{animation:none!important}.bar .bar-actions .chip,.bar .bar-actions .btn.primary,.bar .journal-theme-picker,.bar .bar-actions .nav-icon svg{transition:none!important}}

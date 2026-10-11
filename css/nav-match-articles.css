@@ -1,0 +1,19 @@
+/* Match homepage navbar: identical 82px glass capsule sizing */
+.bar{padding:13px 0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-bottom:none!important}
+.bar::after{display:none!important}
+.bar .container.bar-in{min-height:82px!important;padding:12px 18px!important;border-radius:26px!important;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.015)),var(--surface)!important;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);border:1px solid var(--stroke)!important;box-shadow:0 18px 45px rgba(4,10,22,.12)!important;max-width:1200px;gap:14px}
+.bar-in::before{opacity:.45!important}
+.bar .brand{gap:10px!important;white-space:nowrap!important}
+.bar .brand-mark{height:36px!important;width:36px!important;border-radius:12px!important}
+.bar .brand-name{font-size:21px!important;line-height:1!important;letter-spacing:-.06em!important}
+.bar .brand-copy small{font-size:9px!important;letter-spacing:.13em!important}
+.bar .bar-actions{gap:7px!important;flex-wrap:nowrap!important}
+.bar .bar-actions .chip,.bar .bar-actions .btn{min-height:38px!important;height:38px!important;padding:7px 12px!important;font-size:10px!important;font-weight:800!important;border-radius:999px!important;letter-spacing:.025em!important;white-space:nowrap!important}
+.bar .bar-actions .nav-icon,.bar .bar-actions .nav-icon svg{height:15px!important;width:15px!important}
+.bar .journal-theme-picker{height:38px!important;min-height:38px!important;padding:0 7px!important;gap:5px!important;border-radius:999px!important;max-width:123px!important}
+.bar .journal-theme-picker select{font-size:10px!important;max-width:89px!important;height:34px!important;min-height:34px!important;padding:0 3px!important}
+.bar .picker-icon,.bar .picker-icon svg{width:15px!important;height:15px!important}
+.bar .bar-actions .btn.primary{padding-inline:14px!important}
+@media(max-width:920px){.bar .container.bar-in{padding:10px 12px!important;min-height:72px!important;gap:8px}.bar .brand-copy small{display:none!important}.bar .brand-name{font-size:19px!important}.bar .bar-actions{gap:5px!important}}
+@media(max-width:700px){.bar .container.bar-in{flex-direction:column!important;align-items:stretch!important;min-height:auto!important;padding:12px!important;border-radius:20px!important}.bar .bar-actions{display:grid!important;grid-template-columns:1fr 1fr!important;width:100%!important;gap:8px!important}.bar .journal-theme-picker{grid-column:1 / -1!important;justify-content:space-between!important;width:100%!important;max-width:none!important}.bar .bar-actions .btn.primary{grid-column:1/-1!important}.bar .bar-actions .chip,.bar .bar-actions .btn{width:100%!important}}
+@media(prefers-reduced-motion:reduce){.bar .brand-mark::before{animation:none!important}}

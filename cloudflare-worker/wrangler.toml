@@ -1,0 +1,10 @@
+name = "aleena-articles-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Your complete HTTPS website origin, e.g. https://YOURNAME.github.io
+SITE_ORIGIN = "https://YOURNAME.github.io"
+GITHUB_OWNER = "YOUR_GITHUB_USERNAME"
+GITHUB_REPO = "YOUR_REPOSITORY_NAME"
+GITHUB_BRANCH = "main"

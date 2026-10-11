@@ -1,0 +1,18 @@
+/* Four-language selector, RTL support, mobile-safe navigation */
+.language-control{position:relative;display:flex;align-items:center;gap:6px;padding:0 10px;min-height:44px;border:1px solid var(--line2);border-radius:14px;background:var(--glass);color:var(--ink);flex-shrink:0;z-index:3}
+.language-icon{font-size:16px}.language-control select{font:700 12px 'DM Sans',sans-serif;color:var(--ink);border:0;outline-offset:3px;background:transparent;cursor:pointer;max-width:122px;min-height:42px}.language-control select option{background:var(--elev);color:var(--ink)}
+html[lang=ur] body,html[lang=ps] body{font-family:'Noto Naskh Arabic','Segoe UI',Tahoma,Arial,sans-serif;line-height:1.65}
+html[lang=zh] body{font-family:'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif}
+html[dir=rtl] .hero-grid,html[dir=rtl] .about,html[dir=rtl] .sectionhead,html[dir=rtl] .review-grid{direction:rtl}
+html[dir=rtl] .navinner,html[dir=rtl] .navlinks{direction:rtl}
+html[dir=rtl] .h1,html[dir=rtl] .sectionhead h2{letter-spacing:-.035em}
+html[dir=rtl] .socials,html[dir=rtl] .stats{direction:ltr}
+html[dir=rtl] .complaint-panel{text-align:right}
+html[dir=rtl] .complaint-panel input,html[dir=rtl] .complaint-panel textarea{direction:rtl;text-align:right}
+html[dir=rtl] .complaint-panel input[type=email]{direction:ltr;text-align:left}
+html[dir=rtl] .theme-panel{direction:rtl}
+html[dir=rtl] .logo,html[dir=rtl] .aleena-brand{direction:ltr}
+@media(max-width:1250px){.language-control{padding:0 6px}.language-control select{max-width:83px}.language-icon{font-size:14px}}
+@media(max-width:970px){.controls{gap:5px}.language-control{min-height:42px}.language-control select{max-width:70px;font-size:11px}.language-icon{display:none}}
+@media(max-width:730px){.language-control{height:44px;padding:0 6px}.language-control select{max-width:78px;font-size:11px}html[dir=rtl] .hero-grid>div:first-child{text-align:right}}
+@media(max-width:410px){.language-control select{max-width:59px}.language-control{padding:0 3px}}

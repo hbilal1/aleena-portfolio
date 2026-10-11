@@ -1,0 +1,15 @@
+/* Icons belong to the existing six-theme color system. */
+.ak-animated-icon{display:inline-block;width:19px;height:19px;flex:none;vertical-align:middle;stroke:currentColor;transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .3s ease;will-change:transform}
+.ak-icon-action{display:inline-flex;align-items:center;gap:9px}.ak-icon-action:hover>.ak-animated-icon{transform:translateY(-2px) rotate(-9deg) scale(1.14);filter:drop-shadow(0 0 6px var(--bright))}
+#quickPostButton.ak-icon-action,#confirmPublish.ak-icon-action{overflow:hidden;position:relative;isolation:isolate;box-shadow:0 10px 32px color-mix(in srgb,var(--bright) 21%,transparent);transition:transform .25s,box-shadow .25s}
+#quickPostButton:hover,#confirmPublish:hover{transform:translateY(-3px);box-shadow:0 15px 35px color-mix(in srgb,var(--bright) 30%,transparent)}
+#quickPostButton:after,#confirmPublish:after{content:'';pointer-events:none;position:absolute;inset:-150% auto -150% -120%;width:32%;transform:rotate(28deg);background:linear-gradient(90deg,transparent,#ffffff40,transparent);transition:left .7s}
+#quickPostButton:hover:after,#confirmPublish:hover:after{left:150%}
+.editor-step.ak-icon-action .ak-animated-icon{color:var(--bright)}.editor-step-content.ak-icon-action>.ak-animated-icon{animation:akFloat 3.6s ease-in-out infinite}
+.password-lock.ak-icon-action{justify-content:center}.password-lock .ak-animated-icon{width:27px;height:27px;animation:akPulse 2.2s ease-in-out infinite}
+.success-eyebrow.ak-icon-action{justify-content:center}.success-eyebrow>.ak-animated-icon{color:#20ad73;animation:akFloat 3s ease-in-out infinite}
+.journal-filter.ak-chip-motion{transition:transform .22s ease,box-shadow .22s ease}.journal-filter.ak-chip-motion:hover{transform:translateY(-2px);box-shadow:0 7px 17px color-mix(in srgb,var(--bright) 12%,transparent)}
+.ak-enhanced-card{position:relative;transition:transform .25s ease,box-shadow .25s ease}.ak-enhanced-card:hover{transform:translateY(-3px)}.ak-card-symbol{position:absolute;right:16px;top:16px;color:var(--bright);opacity:.6;pointer-events:none}.ak-enhanced-card:hover .ak-card-symbol{transform:rotate(-12deg) scale(1.25)}
+#editorReadTime.ak-icon-action,.writing-status.ak-icon-action{gap:6px}#editorReadTime .ak-animated-icon,.writing-status .ak-animated-icon{width:15px;height:15px}
+@keyframes akFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes akPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)}50%{transform:scale(1.09);filter:drop-shadow(0 0 9px var(--bright))}}
+@media(prefers-reduced-motion:reduce){.ak-animated-icon,.ak-enhanced-card,.ak-chip-motion{animation:none!important;transition:none!important}#quickPostButton:after,#confirmPublish:after{display:none}}

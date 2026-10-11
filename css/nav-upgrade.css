@@ -1,0 +1,33 @@
+
+/* Premium professional navbar with animated icons */
+.bar{top:0;padding:14px 0 12px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, transparent),color-mix(in srgb,var(--surface) 70%, transparent));backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-bottom:0;box-shadow:0 8px 30px rgba(9,18,35,.05)}
+.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--bright) 45%, transparent),transparent);opacity:.55}
+.bar-in{position:relative;min-height:82px;padding:14px 18px;border-radius:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--card-bg) 88%, white 4%),color-mix(in srgb,var(--surface) 94%, transparent));border:1px solid color-mix(in srgb,var(--stroke) 88%, white 8%);box-shadow:0 18px 46px rgba(7,16,36,.08), inset 0 1px 0 rgba(255,255,255,.08)}
+.bar-in::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,color-mix(in srgb,var(--bright) 40%, transparent),transparent 34%,transparent 65%,color-mix(in srgb,var(--pink) 36%, transparent));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.95}
+.brand{display:inline-flex;align-items:center;gap:13px;text-decoration:none;line-height:1}
+.brand-mark{position:relative;display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:linear-gradient(135deg,color-mix(in srgb,var(--bright) 20%, var(--surface)),color-mix(in srgb,var(--pink) 14%, var(--surface)));border:1px solid color-mix(in srgb,var(--bright) 28%, transparent);box-shadow:0 10px 28px color-mix(in srgb,var(--bright) 20%, transparent), inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden;isolation:isolate}
+.brand-mark::before{content:"";position:absolute;inset:-35%;background:conic-gradient(from 0deg,transparent, color-mix(in srgb,var(--bright) 34%, transparent), transparent 48%, color-mix(in srgb,var(--pink) 30%, transparent), transparent 74%);animation:brandSpin 8s linear infinite}
+.brand-mark svg{position:relative;z-index:1;width:18px;height:18px;stroke:var(--bright);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 8px color-mix(in srgb,var(--bright) 30%, transparent))}
+.brand-copy{display:flex;flex-direction:column;gap:5px}.brand-name{font:800 24px 'Space Grotesk',sans-serif;letter-spacing:-.06em;color:var(--text)}.brand-name span{color:var(--bright)}.brand-copy small{font-size:11px;letter-spacing:.19em;text-transform:uppercase;color:var(--secondary);font-weight:700}
+.bar-actions{gap:10px;align-items:center}
+.nav-icon,.picker-icon{display:inline-grid;place-items:center;width:18px;height:18px;flex:none}
+.nav-icon svg,.picker-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s ease,filter .35s ease,opacity .35s ease}
+.journal-theme-picker,.chip,.btn{position:relative;overflow:hidden}
+.journal-theme-picker{gap:10px;padding:5px 12px 5px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--stroke) 90%, white 5%);background:linear-gradient(180deg,color-mix(in srgb,var(--field-bg) 94%, white 4%), color-mix(in srgb,var(--surface) 94%, transparent));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 8px 24px rgba(7,16,36,.04)}
+.journal-theme-picker::after,.chip::after,.btn::after{content:"";position:absolute;top:-160%;left:-120%;width:38%;height:420%;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .72s ease;pointer-events:none}
+.journal-theme-picker:hover::after,.chip:hover::after,.btn:hover::after{left:140%}
+.journal-theme-picker:hover .picker-icon svg{transform:rotate(14deg) scale(1.1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--bright) 30%, transparent))}
+.journal-theme-picker select{font-size:12px;font-weight:800;letter-spacing:.02em;padding-right:10px}
+.chip,.btn{min-height:46px;padding:12px 18px;border-radius:999px;background:linear-gradient(180deg,color-mix(in srgb,var(--field-bg) 96%, white 4%),color-mix(in srgb,var(--surface) 96%, transparent));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 22px rgba(7,16,36,.04);border:1px solid color-mix(in srgb,var(--stroke) 90%, white 5%);font-size:12px;letter-spacing:.02em}
+.chip:hover,.btn:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--bright) 46%, transparent);box-shadow:0 16px 30px color-mix(in srgb,var(--bright) 16%, transparent),inset 0 1px 0 rgba(255,255,255,.08)}
+.chip.active{background:linear-gradient(120deg,color-mix(in srgb,var(--bright) 11%, var(--field-bg)),color-mix(in srgb,var(--pink) 8%, var(--field-bg)));border-color:color-mix(in srgb,var(--bright) 42%, transparent);box-shadow:0 12px 28px color-mix(in srgb,var(--bright) 12%, transparent)}
+.chip.active .nav-icon svg{animation:navPulse 2.6s ease-in-out infinite}
+.chip:hover .nav-icon svg,.btn:hover .nav-icon svg{transform:translateY(-2px) rotate(-8deg) scale(1.12);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--bright) 32%, transparent))}
+.btn.primary{padding-inline:20px;background:linear-gradient(110deg,var(--bright),color-mix(in srgb,var(--bright) 56%, white 44%) 32%,color-mix(in srgb,var(--pink) 78%, white 22%));color:var(--contrast)!important;border:0!important;box-shadow:0 15px 32px color-mix(in srgb,var(--bright) 18%, transparent)}
+.btn.primary .nav-icon svg{stroke:currentColor}
+.btn.primary:hover{box-shadow:0 18px 38px color-mix(in srgb,var(--bright) 22%, transparent)}
+@keyframes brandSpin{to{transform:rotate(1turn)}}
+@keyframes navPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)}50%{transform:scale(1.12);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--bright) 36%, transparent))}}
+@media(max-width:920px){.bar-in{padding:12px 14px}.brand-copy small{display:none}.brand-name{font-size:21px}.bar-actions{gap:8px}.journal-theme-picker,.chip,.btn{padding-inline:14px}}
+@media(max-width:640px){.bar{padding-top:10px}.bar-in{min-height:auto;gap:12px;align-items:flex-start;flex-direction:column;border-radius:24px}.bar-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}.journal-theme-picker{grid-column:1/-1;justify-content:space-between}.btn.primary{grid-column:1/-1}.chip,.btn{justify-content:center}.brand-copy small{display:block}}
+@media(prefers-reduced-motion:reduce){.brand-mark::before,.chip.active .nav-icon svg{animation:none}.nav-icon svg,.picker-icon svg,.chip,.btn,.journal-theme-picker{transition:none}.journal-theme-picker::after,.chip::after,.btn::after{display:none}}

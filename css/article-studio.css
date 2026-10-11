@@ -1,0 +1,47 @@
+/* Aleena Khan · premium editorial publishing studio (additive theme-compatible override) */
+body .journal-hero{padding-top:clamp(32px,4.8vw,66px);padding-bottom:20px}
+body .journal-hero h1{font-size:clamp(42px,6.4vw,82px);line-height:1.02;letter-spacing:-.065em}
+body .journal-hero .lead{color:var(--secondary);font-size:clamp(14px,1.6vw,17px);max-width:690px;line-height:1.7}
+body .refined-editor.journal-composer{position:relative;max-width:1000px!important;margin:28px auto 68px!important;padding:0!important;background:var(--card-bg)!important;color:var(--text)!important;border:1px solid var(--stroke)!important;border-radius:28px!important;overflow:hidden!important;box-shadow:0 24px 76px rgba(12,30,56,.12),0 6px 24px rgba(0,0,0,.04)!important}
+body .refined-editor:after{display:none!important}
+body .refined-editor:before{content:'';position:absolute;z-index:0;inset:0 0 auto;height:170px;background:radial-gradient(ellipse at 97% -40%,color-mix(in srgb,var(--bright) 19%,transparent),transparent 78%);opacity:.7;pointer-events:none}
+body .refined-editor>.composer-user{position:relative;z-index:1;display:flex;align-items:center;gap:16px;margin:0!important;padding:24px clamp(22px,4vw,48px)!important;background:color-mix(in srgb,var(--field-bg) 62%,var(--card-bg));border-bottom:1px solid var(--stroke)!important}
+body .refined-editor .author-avatar{width:48px!important;height:48px!important;min-width:48px!important;border-radius:16px!important;display:grid;place-items:center;color:var(--contrast);box-shadow:0 12px 28px color-mix(in srgb,var(--bright) 25%,transparent);font-weight:800;font-size:18px}
+body .refined-editor .composer-user strong{color:var(--text)!important;font-size:15px;font-weight:800;letter-spacing:-.02em}
+body .refined-editor .composer-user small{display:block;margin-top:5px;color:var(--secondary)!important;font-size:12px;line-height:1.4}
+body .refined-editor .admin-status{display:inline-flex;align-items:center;gap:8px;margin-left:auto;padding:8px 13px;border-radius:30px;border:1px solid color-mix(in srgb,var(--bright) 24%,var(--stroke));background:color-mix(in srgb,var(--bright) 8%,var(--card-bg));color:var(--bright)!important;font-size:11px;font-weight:800;letter-spacing:.025em}
+.studio-led{display:inline-block;width:7px;height:7px;background:#29c993;border-radius:50%;box-shadow:0 0 0 4px rgba(41,201,147,.12);animation:studioPulse 2.6s ease-in-out infinite}
+body .refined-editor .editor-heading{position:relative;z-index:1;padding:36px clamp(22px,4vw,48px) 32px!important;margin:0!important;border:0!important;gap:20px}
+body .refined-editor .editor-kicker{display:inline-flex;align-items:center;gap:7px;color:var(--bright)!important;font-size:10px;letter-spacing:.19em;font-weight:900}
+body .refined-editor .editor-heading h2{color:var(--text)!important;font-size:clamp(27px,3.6vw,43px)!important;line-height:1.14!important;max-width:720px;margin:12px 0 13px!important;letter-spacing:-.053em}
+body .refined-editor .editor-heading p{color:var(--secondary)!important;max-width:640px;font-size:14px!important;line-height:1.8}
+body .refined-editor .editor-illustration{width:90px!important;height:90px!important;min-width:90px;background:linear-gradient(145deg,color-mix(in srgb,var(--bright) 15%,var(--field-bg)),color-mix(in srgb,var(--pink) 14%,var(--field-bg)))!important;border:1px solid color-mix(in srgb,var(--bright) 22%,var(--stroke))!important;border-radius:24px!important;color:var(--bright);box-shadow:0 18px 46px color-mix(in srgb,var(--bright) 13%,transparent)}
+body .refined-editor .editor-illustration svg{width:56px;height:56px;transition:transform .32s ease}
+body .refined-editor .editor-illustration:hover svg{transform:rotate(-8deg) translateY(-4px)}
+body .refined-editor #editorBox{position:relative;z-index:1;padding:7px clamp(22px,4vw,48px) 34px!important;background:transparent!important}
+body .refined-editor .editor-step{display:flex;align-items:center;gap:12px;margin:0 0 23px!important;padding:21px 0 0!important;border-top:1px solid var(--stroke)!important;color:var(--text)!important;font-size:12px;font-weight:800;letter-spacing:.02em}
+body .refined-editor .editor-step>span:first-child{display:inline-grid;place-items:center;flex:none;width:36px;height:36px;padding:0;margin:0;border-radius:12px;background:color-mix(in srgb,var(--bright) 11%,var(--field-bg));border:1px solid color-mix(in srgb,var(--bright) 23%,var(--stroke));color:var(--bright);font-size:11px;font-weight:900}
+body .refined-editor .editor-step strong{font-size:16px;letter-spacing:-.025em;color:var(--text)}
+body .refined-editor .editor-step small{font-size:12px;margin-left:auto;letter-spacing:0;font-weight:500;color:var(--secondary)}
+body .refined-editor .editor-step-content{margin-top:37px!important}
+body .refined-editor .composer-label{display:block;margin:17px 0 9px!important;font-size:11px!important;font-weight:900;letter-spacing:.11em;color:var(--secondary)!important}
+body .refined-editor .composer-label span{color:var(--bright)}
+body .refined-editor #postTitle,body .refined-editor #postCategory,body .refined-editor textarea{display:block;width:100%!important;box-sizing:border-box;border:1px solid var(--stroke)!important;background:var(--field-bg)!important;color:var(--text)!important;border-radius:15px!important;font-family:'DM Sans',sans-serif!important;transition:border-color .23s,box-shadow .23s,transform .23s}
+body .refined-editor #postTitle{min-height:65px;padding:18px 20px!important;font-size:19px!important;font-weight:700;letter-spacing:-.02em}
+body .refined-editor #postCategory{min-height:59px;padding:16px 18px!important;font-size:14px!important;font-weight:700;cursor:pointer}
+body .refined-editor textarea{min-height:275px!important;padding:22px!important;font-size:16px!important;line-height:1.85!important;resize:vertical;border-radius:18px!important}
+body .refined-editor input::placeholder,body .refined-editor textarea::placeholder{color:var(--secondary)!important;opacity:.75}
+body .refined-editor #postTitle:hover,body .refined-editor #postCategory:hover,body .refined-editor textarea:hover{border-color:color-mix(in srgb,var(--bright) 46%,var(--stroke))!important}
+body .refined-editor #postTitle:focus,body .refined-editor #postCategory:focus,body .refined-editor textarea:focus{outline:none!important;border-color:var(--bright)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--bright) 13%,transparent)!important}
+body .refined-editor .composer-help{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;color:var(--secondary);font-size:12px}
+body .refined-editor .studio-writing-tip{color:var(--secondary);line-height:1.55}
+body .refined-editor .post-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:30px!important;padding-top:25px!important;border-top:1px solid var(--stroke)!important}
+body .refined-editor .writing-status{font-size:12px;color:var(--secondary);gap:8px;line-height:1.6}
+body .refined-editor #quickPostButton{display:inline-flex;min-height:58px;gap:10px;padding:15px 27px!important;border-radius:16px!important;font-size:12px;font-weight:900;letter-spacing:.055em;box-shadow:0 14px 30px color-mix(in srgb,var(--bright) 20%,transparent);transition:transform .25s,box-shadow .25s}
+body .refined-editor #quickPostButton:hover{transform:translateY(-3px);box-shadow:0 20px 38px color-mix(in srgb,var(--bright) 30%,transparent)}
+body .refined-editor #quickPostButton:active{transform:translateY(-1px) scale(.99)}
+body .refined-editor .composer-note{padding:14px clamp(22px,4vw,48px) 19px!important;margin:0!important;background:color-mix(in srgb,var(--field-bg) 72%,var(--card-bg));border-top:1px solid var(--stroke);color:var(--secondary)!important;font-size:12px;line-height:1.65}
+body .refined-editor .studio-security-note{color:var(--secondary)}
+@keyframes studioPulse{50%{box-shadow:0 0 0 8px rgba(41,201,147,0)}}
+@media(max-width:670px){body .refined-editor .editor-heading{align-items:flex-start}body .refined-editor .editor-illustration{width:56px!important;height:56px!important;min-width:56px;border-radius:17px!important}body .refined-editor .editor-illustration svg{width:34px;height:34px}body .refined-editor .editor-step small{display:none}body .refined-editor .composer-user{flex-wrap:wrap}body .refined-editor .admin-status{margin-left:0}body .refined-editor .post-bottom{flex-direction:column;align-items:stretch}body .refined-editor #quickPostButton{width:100%;justify-content:center}body .refined-editor textarea{min-height:230px!important}}
+@media(prefers-reduced-motion:reduce){.studio-led{animation:none}body .refined-editor .editor-illustration svg{transition:none}}

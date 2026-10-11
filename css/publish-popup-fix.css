@@ -1,0 +1,6 @@
+/* Guaranteed overlay visibility and accessible focus on every theme. */
+#postPasswordOverlay:not([hidden]){display:grid!important;position:fixed!important;inset:0!important;z-index:99999!important;place-items:center!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+#postPasswordOverlay .quick-password-panel{max-height:min(94vh,800px);overflow-y:auto;box-shadow:0 32px 110px rgba(0,0,0,.4)}
+#quickPostButton{cursor:pointer}
+#quickPostButton:focus-visible{outline:3px solid var(--bright);outline-offset:3px}
+#quickPasswordError:not(:empty){display:block!important;margin-top:14px!important;color:#ec566a!important;font-size:13px!important;font-weight:700!important;line-height:1.5!important}

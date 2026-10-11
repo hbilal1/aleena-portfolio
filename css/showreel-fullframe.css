@@ -1,0 +1,16 @@
+/* Full-width cinematic showreel: one overlay/play button only */
+.showreel-fullframe{position:relative;isolation:isolate;display:block;min-height:unset!important;aspect-ratio:16/9;max-height:75vh;background:#070f23!important;border-radius:26px;overflow:hidden}
+.showreel-fullframe:before{display:none!important}
+.showreel-full-video{display:block;position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover;object-position:center;background:#070e1d;z-index:0}
+.showreel-cover{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:clamp(22px,5vw,52px);text-align:center;color:#fff;transition:opacity .3s,visibility .3s;background:linear-gradient(180deg,rgba(4,11,28,.45),rgba(4,11,28,.08) 40%,rgba(4,11,28,.75))}
+.showreel-cover-top{font-size:12px;font-weight:800;letter-spacing:.21em;color:#9ee6ff}
+.showreel-main-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)!important;z-index:4;border:1px solid #ffffff77;box-shadow:0 0 0 12px #ffffff13,0 18px 65px #04061a99;cursor:pointer}
+.showreel-main-play:hover{transform:translate(-50%,-50%) scale(1.08)!important}
+.showreel-cover-bottom h2{margin:0 0 8px;font-size:clamp(23px,4vw,56px);font-weight:800;letter-spacing:-.045em;color:#fff}
+.showreel-cover-bottom p{margin:0;font-size:clamp(12px,1.5vw,17px);color:#e0e9f6}
+.showreel-fullframe.is-playing .showreel-cover{opacity:0;visibility:hidden;pointer-events:none}
+.showreel-fullframe.is-playing .showreel-full-video{cursor:default}
+.showreel-video-error{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:6;background:#2a1524f0;border:1px solid #fb8995;color:#fff;padding:12px 16px;border-radius:12px;font-size:13px;text-align:center;max-width:90%}
+.showreel-video-error[hidden]{display:none!important}
+@media(max-width:600px){.showreel-fullframe{border-radius:18px;aspect-ratio:16/10}.showreel-cover{padding:20px 14px}.showreel-main-play{width:66px;height:66px}.showreel-cover-bottom h2{font-size:clamp(22px,6vw,32px)}}
+@media(prefers-reduced-motion:reduce){.showreel-cover{transition:none}}
