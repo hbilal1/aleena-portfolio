@@ -1,10 +1,1 @@
-[
-  {
-    "id": "c3471c46-175a-48d6-b8a9-7c9e2fa7b85b",
-    "title": "Greet wall",
-    "body": "Important: Agar aapke existing HTML mein pehle se class=\"portrait-card\" ya class=\"portrait-photo\" ki CSS maujood hai, to wohi classes use karein. Agar CSS nahi hai, to image ka design banane ke liye CSS bhi add karni hogi.",
-    "category": "Video Editing",
-    "status": "published",
-    "publishedAt": "2026-10-12T11:20:24.491Z"
-  }
-]
+[]
