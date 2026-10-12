@@ -24,7 +24,7 @@ function applyLanguage(lang){if(!languageNames[lang])lang='en';
  for(const [node,original] of originalNodes){if(node.isConnected)node.textContent=translate(original,lang);}
  for(const [el,attrs] of originalAttrs){for(const [k,v] of Object.entries(attrs))el.setAttribute(k,translate(v,lang));}
  select.value=lang;try{localStorage.setItem('aleena-language',lang)}catch(e){};
- document.title=(lang==='en'?'Aleena Khan | NEXFRAME':lang==='ur'?'الینا خان | تخلیقی پورٹ فولیو':lang==='ps'?'الینا خان | تخلیقي پورټفولیو':'Aleena Khan | 创意作品集');
+ document.title=(lang==='en'?'ALEENA KHAN | Film Video Post-Production':lang==='ur'?'الینا خان | تخلیقی پورٹ فولیو':lang==='ps'?'الینا خان | تخلیقي پورټفولیو':'Aleena Khan | 创意作品集');
 }
 select.addEventListener('change',()=>applyLanguage(select.value));
 let chosen='en';try{chosen=localStorage.getItem('aleena-language')||'en'}catch(e){}
